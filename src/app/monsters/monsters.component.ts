@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MONSTERS } from '../mock-monsters';
 import { Monster } from '../monster';
 
 @Component({
@@ -8,16 +9,15 @@ import { Monster } from '../monster';
 })
 export class MonstersComponent implements OnInit {
 
-  monster: Monster = {
-    id: 1,
-    name: 'Grog',
-    attack: 10,
-    defense: 18,
-  }
+  monsters = MONSTERS;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  selectedMonster: Monster;
+  onSelect(monster: Monster): void {
+  this.selectedMonster = monster;
+}
 }
