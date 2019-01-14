@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonstersComponent } from './monsters/monsters.component';
+import { MonsterDetailComponent } from './monster-detail/monster-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MonstersComponent
+    MonstersComponent,
+    MonsterDetailComponent
   ],
   imports: [
     BrowserModule,
