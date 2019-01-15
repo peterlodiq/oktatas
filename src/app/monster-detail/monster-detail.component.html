@@ -2,8 +2,7 @@
 
     <h2>{{monster.name | uppercase}} Details</h2>
     <div>
-      <span>id: </span>
-      {{monster.id}}
+      <label>id: {{monster.id}}</label>
     </div>
     <div>
       <label>name:
@@ -11,12 +10,21 @@
       </label>
     </div>
     <div>
-      <span>attack: </span>
-      {{monster.attack}}
+      <label>attack: 
+        <app-attack [attack]="monster.attack"></app-attack>
+      </label>
     </div>
     <div>
-      <span>defense: </span>
-      {{monster.defense}}
+      <label>defense: 
+        <app-defense [defense]="monster.defense"></app-defense>
+      </label>
     </div>
+    <div>
+      <label>health: 
+        <app-health [health]="monster.health"></app-health>
+      </label>
+    </div>
+
+    <button (click)="goBack()">Go back</button>
   
   </div>

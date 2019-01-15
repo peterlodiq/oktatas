@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MONSTERS } from '../mock-monsters';
+import { MonsterService } from '../monster.service';
 import { Monster } from '../monster';
 
 @Component({
@@ -8,16 +8,16 @@ import { Monster } from '../monster';
   styleUrls: ['./monsters.component.scss']
 })
 export class MonstersComponent implements OnInit {
-
-  monsters = MONSTERS;
-
-  constructor() { }
+  constructor(private monsterService: MonsterService) { }
 
   ngOnInit() {
+    this.getMonsters();
   }
 
-  selectedMonster: Monster;
-  onSelect(monster: Monster): void {
-  this.selectedMonster = monster;
-}
+  monsters: Monster[];
+  getMonsters(): void {
+    this.monsterService
+        .getMonsters()
+        .subscribe(monsters => this.monsters = monsters);
+  }
 }

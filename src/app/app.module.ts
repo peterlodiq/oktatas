@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonstersComponent } from './monsters/monsters.component';
 import { MonsterDetailComponent } from './monster-detail/monster-detail.component';
+import { AttackComponent } from './attack/attack.component';
+import { DefenseComponent } from './defense/defense.component';
+import { HealthComponent } from './health/health.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonstersComponent,
-    MonsterDetailComponent
+    MonsterDetailComponent,
+    AttackComponent,
+    DefenseComponent,
+    HealthComponent
   ],
   imports: [
     BrowserModule,
